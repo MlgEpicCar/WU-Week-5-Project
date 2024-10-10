@@ -1,6 +1,6 @@
 var checkedItems = 0;
 
-document.getElementById("h1").textContent = `Trip Destinaton Check List for Gibraltar`;
+document.getElementById("h1").textContent = `Gibraltar Check List`;
 
 img = document.createElement("img");
 img.src = "/images/gibraltar.jpg";
