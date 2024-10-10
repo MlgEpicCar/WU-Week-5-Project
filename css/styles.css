@@ -27,3 +27,9 @@ button {
     font-weight: 700;
     color: green;
 }
+
+#div-list {
+    margin: auto;
+    width: 30%;
+    color: white;
+}
