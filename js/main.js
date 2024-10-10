@@ -1,4 +1,6 @@
-document.getElementById("h1").textContent = `Trip Destinaton Check List`;
+var checkedItems = 0;
+
+document.getElementById("h1").textContent = `Trip Destinaton Check List for Gibraltar`;
 
 img = document.createElement("img");
 img.src = "/images/gibraltar.jpg";
@@ -9,7 +11,7 @@ function list() {
 
     var itemsAvailable = document.getElementById('div-list');
     var checks = new Array();
-    var checks = [" Food", " Water", " Jacket for Winter", " Clothes", " Phone", " Luggage", " Money", " Wallet", " Car for Transportation" ];
+    var checks = [" Food", " Water", " Sunglasses", " Passport", " Phone", " Luggage", " Money", " Sunscreen", " Shoes" ];
     
 
     var item, p, br;
@@ -20,13 +22,27 @@ function list() {
       item.value=(checks[count] + '</br>');
       item.type="checkbox";
       item.id="item" + count;
+      item.onclick = (function(item) {
+        return function() {
+            validate(item);
+        };
+    })(item);
       p = document.createElement("span");
-      p.innerHTML = checks[count] + ": ";
+      p.innerHTML = checks[count];
       br = document.createElement("br");
       itemsAvailable.appendChild(item);
       itemsAvailable.appendChild(p);
       itemsAvailable.appendChild(br);
    }
+}
+
+function validate(checkbox) {
+    if (checkbox.checked) {
+        checkedItems += 1;
+    } else {
+        checkedItems -= 1;
+    }
+    document.getElementById("tally").innerHTML = `Checked Items: ` + checkedItems;
 }
 
 list();

@@ -21,15 +21,24 @@ img {
     border-color: white;
 }
 
-button {
-    margin: 20px;
-    padding: 5px;
-    font-weight: 700;
-    color: green;
+#div-list {
+    text-align: left;
+    padding-top: 15px;
+    margin: auto;
+    width: 13%;
+    color: white;
 }
 
-#div-list {
-    margin: auto;
-    width: 30%;
+.container {
     color: white;
+    margin: auto;
+    text-align: center;
+}
+
+#tally {
+    font-style: italic;
+}
+
+hr {
+    width: 80%;
 }
